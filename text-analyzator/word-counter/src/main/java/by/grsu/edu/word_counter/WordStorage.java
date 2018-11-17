@@ -7,19 +7,19 @@ package by.grsu.edu.word_counter;
 public class WordStorage {
 	private static final String COLON = ":";
 
-	private StringBuilder word;
+	private String word;
 	private Integer repetitionsNumber;
 
-	public WordStorage(StringBuilder word, Integer repetitionsNumber) {
+	public WordStorage(String word, Integer repetitionsNumber) {
 		this.word = word;
 		this.repetitionsNumber = repetitionsNumber;
 	}
 
-	public StringBuilder getWord() {
+	public String getWord() {
 		return word;
 	}
 
-	public void setWord(StringBuilder word) {
+	public void setWord(String word) {
 		this.word = word;
 	}
 
@@ -52,16 +52,17 @@ public class WordStorage {
 		if (word == null) {
 			if (other.word != null)
 				return false;
-		} else if (!word.toString().equals(other.word.toString()))
+		} else if (!word.equals(other.word))
 			return false;
 		return true;
 	}
 
 	@Override
 	public String toString() {
-		word.append(COLON);
-		word.append(repetitionsNumber);
-		return word.toString();
+		StringBuilder str = new StringBuilder(word);
+		str.append(COLON);
+		str.append(repetitionsNumber);
+		return str.toString();
 	}
 
 }
