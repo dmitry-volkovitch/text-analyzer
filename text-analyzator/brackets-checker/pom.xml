@@ -12,10 +12,13 @@
 	</parent>
 	
 	<groupId>by.grsu.edu</groupId>
-	<artifactId>word-counter</artifactId>
+	<artifactId>brackets-checker</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	
-	<name>word-counter</name>
+	<name>brackets-checker</name>
 	<url>http://maven.apache.org</url>
-	
+
+	<dependencies>
+		
+	</dependencies>
 </project>
