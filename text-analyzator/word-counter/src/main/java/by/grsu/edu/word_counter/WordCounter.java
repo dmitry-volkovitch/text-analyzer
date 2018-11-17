@@ -27,7 +27,7 @@ public class WordCounter {
 	 * @throws IOException
 	 */
 	public void count() throws IOException {
-		StringBuilder str = null;
+		String str = null;
 		while((str = reader.readWord()) != null) {
 			WordStorage storage = new WordStorage(str.toString(), 1);
 			if(wordList.contains(storage)) {

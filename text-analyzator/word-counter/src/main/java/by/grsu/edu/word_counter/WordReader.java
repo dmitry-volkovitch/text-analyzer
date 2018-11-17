@@ -35,7 +35,7 @@ public class WordReader extends FileReader {
 	 * @return return the next word in the file, or null if the end of the stream has been reached
 	 * @throws IOException
 	 */
-	public StringBuilder readWord() throws IOException {
+	public String readWord() throws IOException {
 		StringBuilder str = new StringBuilder();
 		int symbol = -1;
 		char previousSymbol = '\0';
@@ -51,7 +51,7 @@ public class WordReader extends FileReader {
 						str.append(letter);
 						continue;
 					}
-					return str;
+					return str.toString();
 				}
 			}
 
