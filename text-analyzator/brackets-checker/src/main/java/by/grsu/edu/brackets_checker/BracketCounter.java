@@ -3,6 +3,11 @@ package by.grsu.edu.brackets_checker;
 import java.io.IOException;
 import java.util.Stack;
 
+/**
+ * Class that checks the placement of brackets.
+ * @author dimav
+ *
+ */
 public class BracketCounter {
 	private static final char[] OPENING_BRACKETS_ARRAY = { '(', '{', '[' };
 	private static final char CLOSING_ROUND_BRACKET = ')';
@@ -40,6 +45,11 @@ public class BracketCounter {
 		return false;
 	}
 
+	/**
+	 * Check the placement of brackets.
+	 * @return true, if the placement is valid, or false, if the placement is invalid.
+	 * @throws IOException
+	 */
 	public boolean isValidBrackets() throws IOException {
 		Stack<Character> stack = new Stack<>();
 		char bracket = '\0';
