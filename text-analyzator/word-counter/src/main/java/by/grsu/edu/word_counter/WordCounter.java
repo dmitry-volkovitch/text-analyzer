@@ -29,7 +29,7 @@ public class WordCounter {
 	public void count() throws IOException {
 		StringBuilder str = null;
 		while((str = reader.readWord()) != null) {
-			WordStorage storage = new WordStorage(str, 1);
+			WordStorage storage = new WordStorage(str.toString(), 1);
 			if(wordList.contains(storage)) {
 				int i = wordList.indexOf(storage);
 				storage = wordList.get(i);
@@ -46,6 +46,7 @@ public class WordCounter {
 				
 				return o2.getRepetitionsNumber() - o1.getRepetitionsNumber();
 			}
+			
 		}).collect(Collectors.toList()).subList(0, 10);
 		
 	}
