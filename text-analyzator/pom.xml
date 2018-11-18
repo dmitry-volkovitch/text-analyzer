@@ -14,5 +14,6 @@
 	<modules>
 		<module>word-counter</module>
     <module>brackets-checker</module>
+    <module>web</module>
   </modules>
 </project>
