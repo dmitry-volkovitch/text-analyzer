@@ -47,7 +47,7 @@ public class WordCounter {
 				return o2.getRepetitionsNumber() - o1.getRepetitionsNumber();
 			}
 			
-		}).collect(Collectors.toList()).subList(0, 10);
+		}).collect(Collectors.toList()).subList(0, (wordList.size() < 10 ? result.size() : 10));
 		
 	}
 	
