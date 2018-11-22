@@ -76,7 +76,7 @@ public class BusinessService {
 	public File saveTxtFile(MultipartFile file, String newFileName)
 			throws IllegalFileFormatExcepion, IllegalStateException, IOException {
 
-		if (file == null) {
+		if (file == null || file.getOriginalFilename().lastIndexOf(DOT) == -1) {
 			throw new FileNotFoundException();
 		}
 		String fileExtention = file.getOriginalFilename().substring(file.getOriginalFilename().lastIndexOf(DOT));
