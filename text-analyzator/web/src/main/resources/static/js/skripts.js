@@ -11,10 +11,3 @@ function bracketsValidation(){
 	request.send();
 	document.write(request.responseText);
 }
-
-
-/*
- * var status = request.status; if (status == 200) document.write("Текст ответа: " +
- * request.responseText) else if (status == 404) document.write("Ресурс не
- * найден") else document.write(request.statusText)
- */
