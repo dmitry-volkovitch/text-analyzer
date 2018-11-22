@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Text analyzer</title>
+</head>
+<body>
+	<div>
+		<form method="post" enctype="multipart/form-data" action="file">
+			<input type="file" accept="text/*" name="file"> <input
+				type="submit" value="Upload">
+		</form>
+	</div>
+	<div>
+		<input type="button" value="Top 10 words" onclick="top10words()">
+	</div>
+	<div>
+		<input type="button" value="Brackets validation"
+			onclick="bracketsValidation()">
+	</div>
+	<script src="js/skripts.js"></script>
+</body>
+</html>

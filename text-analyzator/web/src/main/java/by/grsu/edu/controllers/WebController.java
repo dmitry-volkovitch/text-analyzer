@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,6 +22,7 @@ import by.grsu.edu.services.BusinessService;
 
 /**
  * Rest controller that accepting requests and sending responses.
+ * 
  * @author dimav
  *
  */
@@ -36,6 +38,7 @@ public class WebController {
 
 	/**
 	 * The method sends 10 most common words in the file.
+	 * 
 	 * @param session
 	 * @return
 	 * @throws FileNotFoundException
@@ -48,6 +51,7 @@ public class WebController {
 
 	/**
 	 * The method sends the result of brackets validation of the file.
+	 * 
 	 * @param session
 	 * @return
 	 * @throws FileNotFoundException
@@ -60,6 +64,7 @@ public class WebController {
 
 	/**
 	 * The method uploads the file on the server.
+	 * 
 	 * @param file
 	 * @param session
 	 * @return
@@ -68,16 +73,18 @@ public class WebController {
 	 * @throws IllegalFileFormatExcepion
 	 */
 	@PostMapping("file")
-	public String uploadFile(@RequestBody MultipartFile file, HttpSession session)
+	public String uploadFile(@RequestBody MultipartFile file, HttpSession session, HttpServletResponse response)
 			throws IllegalStateException, IOException, IllegalFileFormatExcepion {
 
 		File targetFile = service.saveTxtFile(file, session.getId());
 		session.setAttribute(FILE, targetFile.getAbsolutePath());
+		response.sendRedirect("/");
 		return FILE_UPLOADED;
 	}
 
 	/**
 	 * The method hanldes IllegalFileFormatExcepion.
+	 * 
 	 * @return
 	 */
 	@ExceptionHandler(IllegalFileFormatExcepion.class)
@@ -88,6 +95,7 @@ public class WebController {
 
 	/**
 	 * The method hanldes FileNotFoundException.
+	 * 
 	 * @return
 	 */
 	@ExceptionHandler(FileNotFoundException.class)
@@ -98,6 +106,7 @@ public class WebController {
 
 	/**
 	 * The method hanldes IOException.
+	 * 
 	 * @return
 	 */
 	@ExceptionHandler(IOException.class)
